@@ -6,6 +6,7 @@
     <title>Board Games</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <div class="container">
@@ -21,7 +22,7 @@
             <div id="ticTacToe" class="game" style="display:none;">
                 <h2 class="text-center">Tic-Tac-Toe</h2>
                 <div id="ticTacToeBoard" class="d-flex justify-content-center"></div>
-                <button class="btn btn-secondary mt-3" onclick="playWithBot()">Play with Bot</button>
+                <button class="btn btn-secondary mt-3" onclick="playWithBot('ticTacToe')">Play with Bot</button>
             </div>
             <div id="chess" class="game" style="display:none;">
                 <h2 class="text-center">Chess</h2>
@@ -41,7 +42,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
