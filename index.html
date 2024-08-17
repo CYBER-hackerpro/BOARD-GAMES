@@ -4,37 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Board Games</h1>
-            <nav>
-                <button onclick="showGame('ticTacToe')">Tic-Tac-Toe</button>
-                <button onclick="showGame('chess')">Chess</button>
-                <button onclick="showGame('checkers')">Checkers</button>
+        <header class="text-center my-4">
+            <h1 class="display-4">Board Games</h1>
+            <nav class="mb-4">
+                <button class="btn btn-primary mx-2" onclick="showGame('ticTacToe')">Tic-Tac-Toe</button>
+                <button class="btn btn-primary mx-2" onclick="showGame('chess')">Chess</button>
+                <button class="btn btn-primary mx-2" onclick="showGame('checkers')">Checkers</button>
             </nav>
         </header>
         <main id="gameArea">
             <div id="ticTacToe" class="game" style="display:none;">
-                <h2>Tic-Tac-Toe</h2>
-                <div id="ticTacToeBoard"></div>
-                <button onclick="playWithBot()">Play with Bot</button>
+                <h2 class="text-center">Tic-Tac-Toe</h2>
+                <div id="ticTacToeBoard" class="d-flex justify-content-center"></div>
+                <button class="btn btn-secondary mt-3" onclick="playWithBot()">Play with Bot</button>
             </div>
             <div id="chess" class="game" style="display:none;">
-                <h2>Chess</h2>
-                <div id="chessBoard"></div>
+                <h2 class="text-center">Chess</h2>
+                <div id="chessBoard" style="width: 400px; height: 400px; margin: auto;"></div>
+                <button class="btn btn-secondary mt-3" onclick="playChessWithBot()">Play with Bot</button>
             </div>
             <div id="checkers" class="game" style="display:none;">
-                <h2>Checkers</h2>
-                <div id="checkersBoard"></div>
+                <h2 class="text-center">Checkers</h2>
+                <div id="checkersBoard" class="d-flex justify-content-center"></div>
+                <button class="btn btn-secondary mt-3" onclick="playCheckersWithBot()">Play with Bot</button>
             </div>
         </main>
-        <footer>
-            <button onclick="showDonation()">Donate with Pi</button>
+        <footer class="text-center my-4">
+            <button class="btn btn-danger" onclick="showDonation()">Donate with Pi</button>
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 </body>
