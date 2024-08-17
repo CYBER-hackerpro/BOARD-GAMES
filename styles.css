@@ -5,13 +5,54 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
 }
 
-.game {
-    margin: 20px 0;
-    animation: fadeIn 1s;
+.container {
+    max-width: 1200px;
+    margin-top: 5%;
+}
+
+.game-container {
+    display: none; /* Hidden initially until the intro screen fades out */
+}
+
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    padding: 20px;
+}
+
+.tile {
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+.donate-tile {
+    background-color: #dc3545;
 }
 
 @keyframes fadeIn {
@@ -19,64 +60,6 @@ body {
     to { opacity: 1; }
 }
 
-footer {
-    margin-top: 40px;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-#ticTacToeBoard, #checkersBoard {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 5px;
-}
-
-.ticTacToeCell, .checkersCell {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#chessBoard {
-    background-color: #eee;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 0;
-}
-
-.chessSquare {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-}
-
-.chessSquare:nth-child(odd) {
-    background-color: #eee;
+@keyframes fadeOut {
+    to { opacity: 0; display: none; }
 }
