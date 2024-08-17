@@ -1,3 +1,16 @@
+// Initialize Stockfish
+let stockfish = new Worker('https://cdn.jsdelivr.net/npm/@stockfish/stockfish@latest/stockfish.js');
+
+function initializeStockfish() {
+    stockfish.onmessage = function(event) {
+        const message = event.data;
+        if (message.includes('bestmove')) {
+            const bestMove = message.split(' ')[1];
+            // Implement move on the chess board
+        }
+    };
+}
+
 function showGame(gameId) {
     document.querySelectorAll('.game').forEach(game => {
         game.style.display = 'none';
@@ -5,16 +18,19 @@ function showGame(gameId) {
     document.getElementById(gameId).style.display = 'block';
 }
 
-function playWithBot() {
-    alert('Bot play feature not yet implemented.');
+function playWithBot(gameId) {
+    if (gameId === 'ticTacToe') {
+        alert('Bot play feature not yet implemented for Tic-Tac-Toe.');
+    }
 }
 
 function playChessWithBot() {
-    initChess();
+    initializeStockfish();
+    // Initialize chessboard and game logic
 }
 
 function playCheckersWithBot() {
-    initCheckers();
+    // Initialize checkers game and AI
 }
 
 function showDonation() {
@@ -34,4 +50,14 @@ function showDonation() {
 function transferPi(accessToken, amount) {
     // Implement Pi transfer logic
     alert(`Attempting to transfer ${amount} Pi...`);
+}
+
+// Example Tic-Tac-Toe and Chess functions can be implemented here
+
+function initChess() {
+    // Initialize Chess game
+}
+
+function initCheckers() {
+    // Initialize Checkers game
 }
