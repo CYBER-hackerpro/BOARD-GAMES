@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Board Games</h1>
+            <nav>
+                <button onclick="showGame('ticTacToe')">Tic-Tac-Toe</button>
+                <button onclick="showGame('chess')">Chess</button>
+                <button onclick="showGame('checkers')">Checkers</button>
+            </nav>
+        </header>
+        <main id="gameArea">
+            <div id="ticTacToe" class="game" style="display:none;">
+                <h2>Tic-Tac-Toe</h2>
+                <div id="ticTacToeBoard"></div>
+                <button onclick="playWithBot()">Play with Bot</button>
+            </div>
+            <div id="chess" class="game" style="display:none;">
+                <h2>Chess</h2>
+                <div id="chessBoard"></div>
+            </div>
+            <div id="checkers" class="game" style="display:none;">
+                <h2>Checkers</h2>
+                <div id="checkersBoard"></div>
+            </div>
+        </main>
+        <footer>
+            <button onclick="showDonation()">Donate with Pi</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</body>
+</html>
