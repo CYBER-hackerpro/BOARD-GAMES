@@ -5,32 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Games</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="introScreen" class="intro-screen">
-        <h1 class="display-3">Welcome to Board Games!</h1>
+    <div id="intro" class="text-center animate__animated animate__fadeIn">
+        <h1 class="display-4">Welcome to Board Games!</h1>
     </div>
-    <div class="container game-container">
+    <div id="gameSelection" class="container" style="display:none;">
         <header class="text-center my-4">
             <h1 class="display-4">Board Games</h1>
         </header>
-        <main id="gameArea" class="tile-container">
-            <div class="tile" onclick="showGame('ticTacToe')">
-                <h2>Tic-Tac-Toe</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="tile" onclick="showGame('ticTacToe')">
+                    <h2>Tic-Tac-Toe</h2>
+                </div>
             </div>
-            <div class="tile" onclick="showGame('chess')">
-                <h2>Chess</h2>
+            <div class="col-md-4">
+                <div class="tile" onclick="showGame('chess')">
+                    <h2>Chess</h2>
+                </div>
             </div>
-            <div class="tile" onclick="showGame('checkers')">
-                <h2>Checkers</h2>
+            <div class="col-md-4">
+                <div class="tile" onclick="showGame('checkers')">
+                    <h2>Checkers</h2>
+                </div>
             </div>
-            <div class="tile donate-tile" onclick="showDonation()">
-                <h2>Donate with Pi</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center mt-4">
+                <div class="tile donate-tile" onclick="showDonation()">
+                    <h2>Donate with Pi</h2>
+                </div>
             </div>
-        </main>
+        </div>
     </div>
+    <main id="gameArea" style="display:none;">
+        <div id="ticTacToe" class="game" style="display:none;">
+            <h2 class="text-center">Tic-Tac-Toe</h2>
+            <div id="ticTacToeBoard" class="d-flex justify-content-center"></div>
+            <button class="btn btn-secondary mt-3" onclick="playWithBot('ticTacToe')">Play with Bot</button>
+        </div>
+        <div id="chess" class="game" style="display:none;">
+            <h2 class="text-center">Chess</h2>
+            <div id="chessBoard" style="width: 400px; height: 400px; margin: auto;"></div>
+            <button class="btn btn-secondary mt-3" onclick="playChessWithBot()">Play with Bot</button>
+        </div>
+        <div id="checkers" class="game" style="display:none;">
+            <h2 class="text-center">Checkers</h2>
+            <div id="checkersBoard" class="d-flex justify-content-center"></div>
+            <button class="btn btn-secondary mt-3" onclick="playCheckersWithBot()">Play with Bot</button>
+        </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
