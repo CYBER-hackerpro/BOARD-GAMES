@@ -9,35 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <div class="container">
+    <div id="introScreen" class="intro-screen">
+        <h1 class="display-3">Welcome to Board Games!</h1>
+    </div>
+    <div class="container game-container">
         <header class="text-center my-4">
             <h1 class="display-4">Board Games</h1>
-            <nav class="mb-4">
-                <button class="btn btn-primary mx-2" onclick="showGame('ticTacToe')">Tic-Tac-Toe</button>
-                <button class="btn btn-primary mx-2" onclick="showGame('chess')">Chess</button>
-                <button class="btn btn-primary mx-2" onclick="showGame('checkers')">Checkers</button>
-            </nav>
         </header>
-        <main id="gameArea">
-            <div id="ticTacToe" class="game" style="display:none;">
-                <h2 class="text-center">Tic-Tac-Toe</h2>
-                <div id="ticTacToeBoard" class="d-flex justify-content-center"></div>
-                <button class="btn btn-secondary mt-3" onclick="playWithBot('ticTacToe')">Play with Bot</button>
+        <main id="gameArea" class="tile-container">
+            <div class="tile" onclick="showGame('ticTacToe')">
+                <h2>Tic-Tac-Toe</h2>
             </div>
-            <div id="chess" class="game" style="display:none;">
-                <h2 class="text-center">Chess</h2>
-                <div id="chessBoard" style="width: 400px; height: 400px; margin: auto;"></div>
-                <button class="btn btn-secondary mt-3" onclick="playChessWithBot()">Play with Bot</button>
+            <div class="tile" onclick="showGame('chess')">
+                <h2>Chess</h2>
             </div>
-            <div id="checkers" class="game" style="display:none;">
-                <h2 class="text-center">Checkers</h2>
-                <div id="checkersBoard" class="d-flex justify-content-center"></div>
-                <button class="btn btn-secondary mt-3" onclick="playCheckersWithBot()">Play with Bot</button>
+            <div class="tile" onclick="showGame('checkers')">
+                <h2>Checkers</h2>
+            </div>
+            <div class="tile donate-tile" onclick="showDonation()">
+                <h2>Donate with Pi</h2>
             </div>
         </main>
-        <footer class="text-center my-4">
-            <button class="btn btn-danger" onclick="showDonation()">Donate with Pi</button>
-        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
