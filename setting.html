@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <div class="settings-group">
+            <h2>Volume</h2>
+            <input type="range" min="0" max="100" value="50" id="volume-control">
+        </div>
+        <div class="settings-group">
+            <h2>Language</h2>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <!-- Add more languages here -->
+            </select>
+        </div>
+        <div class="settings-group">
+            <label for="theme-toggle">Dark Mode:</label>
+            <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
