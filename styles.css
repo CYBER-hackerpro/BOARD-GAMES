@@ -33,3 +33,10 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
+.game-tiles-container {
+    display: flex;
+    flex-direction: column; /* Change to vertical alignment */
+    align-items: center; /* Align tiles in the center horizontally */
+    gap: 20px; /* Adds space between the tiles */
+    margin: 20px 0;
+}
