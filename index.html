@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Master</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="intro.css">
 </head>
 <body>
     <!-- Intro Section -->
@@ -19,25 +18,30 @@
             <img src="logo.png" alt="Board Master Logo" class="logo">
             <h1>BOARD MASTER</h1>
         </header>
-        <div class="tiles">
+        <div id="gameSelection" class="tiles">
             <div class="tile">
-                <a href="chess.html">
+                <a href="chess.html" onclick="showGame('chessGame'); return false;">
                     <img src="chess.png" alt="Chess">
                     <span>Chess</span>
                 </a>
             </div>
             <div class="tile">
-                <a href="checkers.html">
+                <a href="checkers.html" onclick="showGame('checkersGame'); return false;">
                     <img src="checkers.png" alt="Checkers">
                     <span>Checkers</span>
                 </a>
             </div>
             <div class="tile">
-                <a href="tictactoe.html">
+                <a href="tictactoe.html" onclick="showGame('tictactoeGame'); return false;">
                     <img src="tictactoe.png" alt="Tic-Tac-Toe">
                     <span>Tic-Tac-Toe</span>
                 </a>
             </div>
+        </div>
+        <div id="gameArea" class="hidden">
+            <div id="chessGame" class="game hidden">Chess Game Content</div>
+            <div id="checkersGame" class="game hidden">Checkers Game Content</div>
+            <div id="tictactoeGame" class="game hidden">Tic-Tac-Toe Game Content</div>
         </div>
         <div class="buttons">
             <a href="setting.html" class="button">Settings</a>
