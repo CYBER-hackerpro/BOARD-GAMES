@@ -8,7 +8,15 @@ body {
 
 /* Smooth visibility transitions */
 .hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s; /* Smooth hiding with delay */
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease; /* Smooth showing */
 }
 
 #intro, #homepage {
@@ -36,6 +44,12 @@ body {
     height: 100%;
     background: #000; /* Optional: Black background for intro */
     z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Fade-out effect for intro */
+#intro.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-out */
 }
 
 /* Main Content */
@@ -90,4 +104,24 @@ button:hover, .button:hover {
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
+}
+
+.dark-mode button, .dark-mode .button {
+    background: linear-gradient(45deg, #00695C, #D32F2F); /* Darker buttons in dark mode */
+}
+
+.dark-mode .tile {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(255,255,255,0.1); /* Lighter shadow in dark mode */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .tiles {
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
 }
