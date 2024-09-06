@@ -4,15 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const gameSelection = document.getElementById('gameSelection');
     const gameArea = document.getElementById('gameArea');
 
-    // Show intro for 3 seconds, then show homepage
+    // Show intro for 3 seconds, then show homepage with fade-in effect
     setTimeout(function () {
-        intro.style.display = "none";  // Hide intro
-        homepage.classList.remove("hidden");  // Show homepage
+        intro.classList.add("fade-out");  // Add fade-out class for smooth transition
+        setTimeout(function() {
+            intro.style.display = "none";  // Hide intro after fade-out
+            homepage.classList.remove("hidden");  // Show homepage with fade-in
+            homepage.classList.add("fade-in");
 
-        if (gameSelection) {
-            gameSelection.style.display = 'block'; // Show game selection if exists
-        }
-    }, 3000); // Adjusted to 3 seconds for consistency
+            if (gameSelection) {
+                gameSelection.style.display = 'block'; // Show game selection if exists
+            }
+        }, 500); // Slight delay for the fade-out animation
+    }, 3000);
 
     // Function to switch between game selection and a specific game
     function showGame(gameId) {
@@ -26,7 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Show the selected game by gameId
         const selectedGame = document.getElementById(gameId);
-        if (selectedGame) selectedGame.style.display = 'block';
+        if (selectedGame) {
+            selectedGame.classList.add("fade-in");  // Add fade-in animation
+            selectedGame.style.display = 'block';
+        }
     }
 
     // Expose showGame to be used on clicks or game selection
