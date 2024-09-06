@@ -9,7 +9,7 @@
 <body>
     <!-- Intro Section -->
     <div id="intro">
-        <video src="intro.mp4" autoplay muted></video>
+        <video src="intro.mp4" autoplay muted playsinline></video> <!-- Added 'playsinline' for mobile support -->
     </div>
 
     <!-- Main Content (hidden during intro) -->
@@ -18,31 +18,37 @@
             <img src="logo.png" alt="Board Master Logo" class="logo">
             <h1>BOARD MASTER</h1>
         </header>
+
+        <!-- Game Selection -->
         <div id="gameSelection" class="tiles">
             <div class="tile">
-                <a href="chess.html" onclick="showGame('chessGame'); return false;">
+                <a href="#" onclick="showGame('chessGame'); return false;">
                     <img src="chess.png" alt="Chess">
                     <span>Chess</span>
                 </a>
             </div>
             <div class="tile">
-                <a href="checkers.html" onclick="showGame('checkersGame'); return false;">
+                <a href="#" onclick="showGame('checkersGame'); return false;">
                     <img src="checkers.png" alt="Checkers">
                     <span>Checkers</span>
                 </a>
             </div>
             <div class="tile">
-                <a href="tictactoe.html" onclick="showGame('tictactoeGame'); return false;">
+                <a href="#" onclick="showGame('tictactoeGame'); return false;">
                     <img src="tictactoe.png" alt="Tic-Tac-Toe">
                     <span>Tic-Tac-Toe</span>
                 </a>
             </div>
         </div>
+
+        <!-- Game Area -->
         <div id="gameArea" class="hidden">
             <div id="chessGame" class="game hidden">Chess Game Content</div>
             <div id="checkersGame" class="game hidden">Checkers Game Content</div>
             <div id="tictactoeGame" class="game hidden">Tic-Tac-Toe Game Content</div>
         </div>
+
+        <!-- Buttons -->
         <div class="buttons">
             <a href="setting.html" class="button">Settings</a>
             <a href="#" class="button">Donate Us</a>
